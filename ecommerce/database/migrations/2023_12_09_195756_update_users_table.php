@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->boolean("gender")->default(false);
+            $table->integer("user_role")->default(2);
         });
     }
 
