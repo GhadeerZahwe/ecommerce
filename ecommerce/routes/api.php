@@ -12,8 +12,8 @@ Route::post('refresh', [AuthController::class, 'refresh']);
 
 // Product routes
 Route::get('/products', [ProductController::class, 'get_products']);
-Route::post('/products', [ProductController::class, 'addProduct']);
-Route::post('/products/update/{id}', [ProductController::class, 'updateProduct']);
-Route::delete('/products/{id}', [ProductController::class, 'deleteProduct']);
+Route::post('/products', [ProductController::class, 'add_product']);
+Route::post('/products/update/{id}', [ProductController::class, 'update_Product']);
+Route::delete('/products/{id}', [ProductController::class, 'delete_Product']);
 ?>
 
