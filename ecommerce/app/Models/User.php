@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
 
-class User extends Authenticatable
+class User extends Authenticatable implements JWTSubject
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'user_role',
+        'gender'
     ];
 
     /**
@@ -39,10 +41,10 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'email_verified_at' => 'datetime'
+        'email_verified_at' => 'datetime',
     ];
 
-     /**
+    /**
      * Get the identifier that will be stored in the subject claim of the JWT.
      *
      * @return mixed
@@ -62,21 +64,41 @@ class User extends Authenticatable
         return [];
     }
 
+    /**
+     * Define a relationship: a user has many products.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function products()
     {
         return $this->hasMany(Product::class);
     }
 
+    /**
+     * Define a relationship: a user has many transactions.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function transactions()
     {
         return $this->hasMany(Transaction::class);
     }
 
+    /**
+     * Define a relationship: a user has one shopping cart.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
     public function shoppingCart()
     {
         return $this->hasOne(ShoppingCart::class);
     }
-    
+
+    /**
+     * Define a relationship: a user has many products in the shopping cart.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function shoppingCartProducts()
     {
         return $this->hasMany(ShoppingCartProducts::class);
