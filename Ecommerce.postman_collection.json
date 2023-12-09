@@ -1,0 +1,635 @@
+{
+	"info": {
+		"_postman_id": "46d49cf9-f5fc-4d6d-9421-eb4b5a4f36e2",
+		"name": "Ecommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20658044"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjIwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzAyMTU4NDg5LCJleHAiOjE3MDIxNjIwODksIm5iZiI6MTcwMjE1ODQ4OSwianRpIjoiUElQRzhncUQ0a2FncUVWeiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.45blEht6NNUyIdZR6-tR8hqfYj9izHuVJvwJZEULw4E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Ali",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ali23@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123123",
+									"type": "text"
+								},
+								{
+									"key": "user_role",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjIwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzAyMTYwNjM0LCJleHAiOjE3MDIxNjQyMzQsIm5iZiI6MTcwMjE2MDYzNCwianRpIjoiU3dZV3BXUWpTeHdOOWFXNiIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ssl3xtAtnHTuQ_wJRwsWIGbPWilGj0swLymglNUQEW0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "ali23@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjIwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzAyMTU5NjU3LCJleHAiOjE3MDIxNjMyNTcsIm5iZiI6MTcwMjE1OTY1NywianRpIjoiT0xJeVpFRWVkVjMyb1JnVCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.Hv5_VUG-phQrErmKmvF-1gUssMpvnraG8denNqRIw8g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjIwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzAyMTU4NDg5LCJleHAiOjE3MDIxNjIwODksIm5iZiI6MTcwMjE1ODQ4OSwianRpIjoiUElQRzhncUQ0a2FncUVWeiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.45blEht6NNUyIdZR6-tR8hqfYj9izHuVJvwJZEULw4E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Ghadeer Zahwe",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ghadeer@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123123",
+									"type": "text"
+								},
+								{
+									"key": "user_role",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get Products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjIwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzAyMTYwNjM0LCJleHAiOjE3MDIxNjQyMzQsIm5iZiI6MTcwMjE2MDYzNCwianRpIjoiU3dZV3BXUWpTeHdOOWFXNiIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ssl3xtAtnHTuQ_wJRwsWIGbPWilGj0swLymglNUQEW0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjIwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzAyMTYwNjM0LCJleHAiOjE3MDIxNjQyMzQsIm5iZiI6MTcwMjE2MDYzNCwianRpIjoiU3dZV3BXUWpTeHdOOWFXNiIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ssl3xtAtnHTuQ_wJRwsWIGbPWilGj0swLymglNUQEW0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "updated_at",
+									"value": "2023-12-09 22:28:05",
+									"type": "text"
+								},
+								{
+									"key": "created_at",
+									"value": "2023-12-09 22:28:05",
+									"type": "text"
+								},
+								{
+									"key": "product_name",
+									"value": "Fruits",
+									"type": "text"
+								},
+								{
+									"key": "product_description",
+									"value": "Bananas",
+									"type": "text"
+								},
+								{
+									"key": "product_price",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "stock_quantity",
+									"value": "70",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjIwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzAyMTYwNjM0LCJleHAiOjE3MDIxNjQyMzQsIm5iZiI6MTcwMjE2MDYzNCwianRpIjoiU3dZV3BXUWpTeHdOOWFXNiIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ssl3xtAtnHTuQ_wJRwsWIGbPWilGj0swLymglNUQEW0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "updated_at",
+									"value": "2023-12-09 22:28:05",
+									"type": "text"
+								},
+								{
+									"key": "created_at",
+									"value": "2023-12-09 22:28:05",
+									"type": "text"
+								},
+								{
+									"key": "product_name",
+									"value": "iphone X",
+									"type": "text"
+								},
+								{
+									"key": "product_description",
+									"value": "the best one",
+									"type": "text"
+								},
+								{
+									"key": "product_price",
+									"value": "900",
+									"type": "text"
+								},
+								{
+									"key": "stock_quantity",
+									"value": "7",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/products/update/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"products",
+								"update",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjIwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzAyMTYwNjM0LCJleHAiOjE3MDIxNjQyMzQsIm5iZiI6MTcwMjE2MDYzNCwianRpIjoiU3dZV3BXUWpTeHdOOWFXNiIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ssl3xtAtnHTuQ_wJRwsWIGbPWilGj0swLymglNUQEW0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/products/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"products",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transactions",
+			"item": [
+				{
+					"name": "Get Transactions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjIwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzAyMTYzNTQzLCJleHAiOjE3MDIxNjcxNDMsIm5iZiI6MTcwMjE2MzU0MywianRpIjoiRXowNVNPQk9MdjhsdGM0OSIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.h1GOm00eyfDZsgJ47ZtRytWmbsTm8oaShAtYAw_6AS8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/transactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": []
+		},
+		{
+			"name": "ShoppingCart",
+			"item": [
+				{
+					"name": "Get ShoppingCarts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjIwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzAyMTYyMDIyLCJleHAiOjE3MDIxNjU2MjIsIm5iZiI6MTcwMjE2MjAyMiwianRpIjoiaVJMZzVodnl3VHFjcXNjMyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.pseu98r40_vnrV6vF6nPsFbXuu1GU6LY1PbLlNuUDTs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add ShoppingCart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjIwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzAyMTYyMDIyLCJleHAiOjE3MDIxNjU2MjIsIm5iZiI6MTcwMjE2MjAyMiwianRpIjoiaVJMZzVodnl3VHFjcXNjMyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.pseu98r40_vnrV6vF6nPsFbXuu1GU6LY1PbLlNuUDTs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "shopping_cart_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "product_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "7",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete ShoppingCart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjIwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzAyMTYyMDIyLCJleHAiOjE3MDIxNjU2MjIsIm5iZiI6MTcwMjE2MjAyMiwianRpIjoiaVJMZzVodnl3VHFjcXNjMyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.pseu98r40_vnrV6vF6nPsFbXuu1GU6LY1PbLlNuUDTs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/cart/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"cart",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
