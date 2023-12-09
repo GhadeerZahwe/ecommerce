@@ -48,25 +48,28 @@ class ShoppingCartController extends Controller
      * Add products to the shopping cart.
      */
     public function add_shopping_cart(Request $request)
-    {
-        $user_role = auth()->user()->user_role;
+{
+    $user_role = auth()->user()->user_role;
 
-        // If the user is a buyer
-        if ($user_role == 2) {
-            $user_id = ["user_id" => auth()->user()->id];
-            $request->merge($user_id);
+    // If the user is a buyer
+    if ($user_role == 2) {
+        $user_id = ["user_id" => auth()->user()->id];
+        $request->merge($user_id);
 
-            $products = $request->products;
+        // Ensure the 'products' parameter is present and is an array
+        $products = $request->input('products', []);
 
-            // Create a new shopping cart
-            $shopping_cart = ShoppingCart::create($request->all());
+        // Create a new shopping cart
+        $shopping_cart = ShoppingCart::create($request->all());
 
-            $shopping_cart_product = [];
+        $shopping_cart_product = [];
 
+        // Check if $products is not null before looping through it
+        if (is_array($products) && count($products) > 0) {
             // Loop through the added products and add them to ShoppingCartProducts
             foreach ($products as $product) {
                 if (isset($product["product_id"]) && isset($product["quantity"])) {
-                    $shopping_cart_product[] = ShoppingCartProducts::create([
+                    $shopping_cart_product[] = ShoppingCart::create([
                         "user_id" => $shopping_cart->user_id,
                         "shopping_cart_id" => $shopping_cart->id,
                         "product_id" => $product["product_id"],
@@ -74,19 +77,22 @@ class ShoppingCartController extends Controller
                     ]);
                 }
             }
-
-            return response()->json([
-                "status" => "success",
-                "data" => $shopping_cart_product
-            ]);
-        } else {
-            return response()->json([
-                "status" => "error",
-                "message" => "You are not authorized to perform this action"
-            ]);
         }
-    }
 
+        return response()->json([
+            "status" => "success",
+            "data" => $shopping_cart_product
+        ]);
+    } else {
+        return response()->json([
+            "status" => "error",
+            "message" => "You are not authorized to perform this action"
+        ]);
+    }
+}
+
+
+    
     /**
      * Delete the shopping cart and its products.
      */
