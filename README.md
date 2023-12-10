@@ -16,6 +16,7 @@
 
 -Shopping cart functionality (Add to cart, Remove from cart, View cart).
 
+
 ### Turned in before the deadline
 
 ![image](https://github.com/GhadeerZahwe/ecommerce/assets/88279980/d2ff2cc5-d9fd-4c0c-b33e-87097cf99b77)
